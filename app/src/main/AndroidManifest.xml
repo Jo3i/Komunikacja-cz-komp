@@ -8,12 +8,10 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OcrApp">
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
 
-        <!-- Menu główne -->
         <activity android:name=".MainMenuActivity" />
 
-        <!-- Logowanie – jako ekran startowy -->
         <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -23,5 +21,4 @@
         </activity>
 
     </application>
-
 </manifest>
