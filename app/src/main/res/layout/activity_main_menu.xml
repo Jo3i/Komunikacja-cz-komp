@@ -3,27 +3,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:gravity="center">
 
-    <EditText
-        android:id="@+id/username"
+    <Button
+        android:id="@+id/scan_exam_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login" />
+        android:text="Skanuj egzamin" />
 
-    <EditText
-        android:id="@+id/password"
+    <Button
+        android:id="@+id/view_history_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hasło"
-        android:inputType="textPassword"
+        android:text="Historia wyników"
         android:layout_marginTop="12dp" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/settings_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zaloguj się"
-        android:layout_marginTop="24dp" />
+        android:text="Ustawienia"
+        android:layout_marginTop="12dp" />
 </LinearLayout>
