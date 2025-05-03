@@ -6,17 +6,24 @@
     android:gravity="center"
     android:padding="24dp">
 
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textSize="70sp" />
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login" />
+        android:hint="@string/usr_name" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hasło"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:layout_marginTop="12dp" />
 
@@ -24,6 +31,6 @@
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zaloguj się"
+        android:text="@string/login"
         android:layout_marginTop="24dp" />
 </LinearLayout>

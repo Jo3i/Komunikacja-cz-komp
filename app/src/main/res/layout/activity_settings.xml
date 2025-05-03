@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ustawienia"
+        android:text="@string/settings"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="24dp" />
@@ -19,20 +19,20 @@
         android:id="@+id/button_theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zmień motyw" />
+        android:text="@string/change_theme" />
 
     <Button
         android:id="@+id/button_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zmień język"
+        android:text="@string/change_theme"
         android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/button_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wyloguj"
+        android:text="@string/logout"
         android:layout_marginTop="12dp" />
 
 </LinearLayout>

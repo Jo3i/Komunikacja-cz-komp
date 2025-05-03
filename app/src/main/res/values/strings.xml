@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">OCRapp</string>
+    <string name="app_name" translatable="false">OCR App</string>
+    <string name="login">Zaloguj się</string>
+    <string name="password">Hasło</string>
+    <string name="main_menu">Menu główne</string>
+    <string name="settings">Ustawienia</string>
+    <string name="logout">Wyloguj</string>
+    <string name="change_theme">Zmień motyw</string>
+    <string name="change_language">Zmień język</string>
+    <string name="language_pl">Polski</string>
+    <string name="language_en">Angielski</string>
+    <string name="ic_cmr">Ikona kamery</string>
+    <string name="scan">Skanuj</string>
+    <string name="ic_his">Ikona historii</string>
+    <string name="history">Historia</string>
+    <string name="ic_set">Ikona ustawień</string>
+    <string name="usr_name">Nazwa użytkownika/email</string>
 </resources>

@@ -31,12 +31,12 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_camera"
-                android:contentDescription="ikona kamery"/>
+                android:contentDescription="@string/ic_cmr"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Skanuj"
+                android:text="@string/scan"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -58,12 +58,12 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_history"
-                android:contentDescription="ikona histori"/>
+                android:contentDescription="@string/ic_his"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Historia"
+                android:text="@string/history"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -84,12 +84,12 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_settings"
-                android:contentDescription="ikona ustawien"/>
+                android:contentDescription="@string/ic_set"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ustawienia"
+                android:text="@string/settings"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
