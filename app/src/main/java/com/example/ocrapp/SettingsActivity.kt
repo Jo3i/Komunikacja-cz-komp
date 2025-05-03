@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -34,7 +35,7 @@ class SettingsActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(
                 if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
             )
-            preferences.edit().putBoolean("dark_mode", isDarkMode).apply()
+            preferences.edit() { putBoolean("dark_mode", isDarkMode) }
         }
 
         btnLanguage.setOnClickListener {
