@@ -4,34 +4,33 @@
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainMenuActivity">
 
-    <GridLayout
-        android:id="@+id/gridLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:padding="16dp"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal">
 
-        <!-- Przycisk 1 -->
+        <!-- Scan button -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/button_scan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_columnWeight="1"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:background="@drawable/rounded_button"
             android:padding="16dp"
             android:gravity="center"
-            android:onClick="onButtonClick">
+            android:onClick="onButtonScanClick">
 
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_camera"
-                android:contentDescription="@string/ic_cmr"/>
+                android:contentDescription="@string/ic_cmr" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -42,23 +41,23 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
-        <!-- Przycisk 2 -->
+        <!-- History button -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/button_history"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_columnWeight="1"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:background="@drawable/rounded_button"
             android:padding="16dp"
             android:gravity="center"
-            android:onClick="onButtonClick">
+            android:onClick="onButtonHistoryClick">
 
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_history"
-                android:contentDescription="@string/ic_his"/>
+                android:contentDescription="@string/ic_his" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,22 +68,22 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
+        <!-- Settings button -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/button_settings"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_columnWeight="1"
             android:orientation="vertical"
             android:background="@drawable/rounded_button"
             android:padding="16dp"
             android:gravity="center"
-            android:onClick="onButtonClick">
+            android:onClick="onButtonSettingsClick">
 
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:src="@drawable/ic_settings"
-                android:contentDescription="@string/ic_set"/>
+                android:contentDescription="@string/ic_set" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,6 +93,6 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
-        <!-- Dodaj więcej przycisków analogicznie -->
-    </GridLayout>
+
+    </LinearLayout>
 </ScrollView>

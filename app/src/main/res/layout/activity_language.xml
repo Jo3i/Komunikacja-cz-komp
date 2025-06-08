@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     android:orientation="vertical"
-    android:gravity="center">
+>
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,16 +14,55 @@
         android:textSize="24sp"
         android:layout_marginBottom="24dp" />
 
-    <Button
+    <!-- Polski -->
+    <LinearLayout
         android:id="@+id/button_polish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/language_pl" />
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_button"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:onClick="onPolishClick"
+        android:layout_marginBottom="12dp">
 
-    <Button
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_flag_pl"
+            android:contentDescription="@string/language_pl" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language_pl"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Angielski -->
+    <LinearLayout
         android:id="@+id/button_english"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/language_en"
-        android:layout_marginTop="12dp" />
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_button"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:onClick="onEnglishClick">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_flag_eng"
+            android:contentDescription="@string/language_en" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language_en"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
 </LinearLayout>

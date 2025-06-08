@@ -3,7 +3,7 @@ package com.example.ocrapp
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -17,7 +17,6 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Odczyt SharedPreferences
         preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
         isDarkMode = preferences.getBoolean("dark_mode", false)
         AppCompatDelegate.setDefaultNightMode(
@@ -25,25 +24,35 @@ class SettingsActivity : AppCompatActivity() {
         )
 
         setContentView(R.layout.activity_settings)
+    }
 
-        val btnTheme = findViewById<Button>(R.id.button_theme)
-        val btnLanguage = findViewById<Button>(R.id.button_language)
-        val btnLogout = findViewById<Button>(R.id.button_logout)
+    // Metoda wywoływana z android:onClick="onChangeThemeClick"
+    fun onChangeThemeClick(view: View) {
+        isDarkMode = !isDarkMode
+        AppCompatDelegate.setDefaultNightMode(
+            if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        )
+        preferences.edit { putBoolean("dark_mode", isDarkMode) }
+        Toast.makeText(this, "Motyw zmieniony", Toast.LENGTH_SHORT).show()
+    }
 
-        btnTheme.setOnClickListener {
-            isDarkMode = !isDarkMode
-            AppCompatDelegate.setDefaultNightMode(
-                if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
-            )
-            preferences.edit() { putBoolean("dark_mode", isDarkMode) }
-        }
+    // Metoda wywoływana z android:onClick="onChangeLanguageClick"
+    fun onChangeLanguageClick(view: View) {
+        val intent = Intent(this, LanguageActivity::class.java)
+        startActivity(intent)
+    }
 
-        btnLanguage.setOnClickListener {
-            startActivity(Intent(this, LanguageActivity::class.java))
-        }
+    // Metoda wywoływana z android:onClick="onLogoutClick"
+    fun onLogoutClick(view: View) {
+        // Tu wylogowanie - np. czyszczenie SharedPreferences lub tokenów itp.
+        preferences.edit { clear() }
+        Toast.makeText(this, "Wylogowano", Toast.LENGTH_SHORT).show()
 
-        btnLogout.setOnClickListener {
-            Toast.makeText(this, "Wylogowano (demo)", Toast.LENGTH_SHORT).show()
-        }
+        // Przejście do ekranu logowania
+        val intent = Intent(this, LoginActivity::class.java)
+        // Czyść stos, żeby nie można było wrócić przyciskiem wstecz
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }

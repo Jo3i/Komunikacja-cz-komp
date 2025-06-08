@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">OCR App</string>
+    <string name="app_name" translatable="false">OCR App: w67227</string>
     <string name="login">Zaloguj się</string>
     <string name="password">Hasło</string>
     <string name="main_menu">Menu główne</string>

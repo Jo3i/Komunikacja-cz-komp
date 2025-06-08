@@ -12,12 +12,15 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textStyle="bold"
-        android:textSize="70sp" />
+        android:textSize="70sp"
+        android:layout_gravity=""/>
+
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/usr_name" />
+        android:hint="@string/usr_name"
+        android:layout_marginTop="24dp" />
 
     <EditText
         android:id="@+id/password"
@@ -27,10 +30,24 @@
         android:inputType="textPassword"
         android:layout_marginTop="12dp" />
 
-    <Button
+    <!-- Przycisk jako LinearLayout -->
+    <LinearLayout
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginTop="24dp" />
+        android:background="@drawable/rounded_button"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:onClick="onLoginClick">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 </LinearLayout>

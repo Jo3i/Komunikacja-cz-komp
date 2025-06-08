@@ -23,6 +23,7 @@
 
         <!-- Zmień motyw -->
         <LinearLayout
+            android:id="@+id/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -49,6 +50,7 @@
 
         <!-- Zmień język -->
         <LinearLayout
+            android:id="@+id/button_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -75,6 +77,7 @@
 
         <!-- Wyloguj -->
         <LinearLayout
+            android:id="@+id/button_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

@@ -2,9 +2,10 @@ package com.example.ocrapp
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 
 class LanguageActivity : AppCompatActivity() {
 
@@ -15,18 +16,17 @@ class LanguageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_language)
 
         preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+    }
 
-        val btnPolish = findViewById<Button>(R.id.button_polish)
-        val btnEnglish = findViewById<Button>(R.id.button_english)
+    fun onPolishClick(view: View) {
+        preferences.edit() { putString("language", "pl") }
+        Toast.makeText(this, "Wybrano język polski", Toast.LENGTH_SHORT).show()
+        // Możesz tu dodać np. powrót do Settings lub restart activity, jeśli chcesz
+    }
 
-        btnPolish.setOnClickListener {
-            preferences.edit().putString("language", "pl").apply()
-            Toast.makeText(this, "Wybrano język polski", Toast.LENGTH_SHORT).show()
-        }
-
-        btnEnglish.setOnClickListener {
-            preferences.edit().putString("language", "en").apply()
-            Toast.makeText(this, "English selected", Toast.LENGTH_SHORT).show()
-        }
+    fun onEnglishClick(view: View) {
+        preferences.edit() { putString("language", "en") }
+        Toast.makeText(this, "English selected", Toast.LENGTH_SHORT).show()
+        // To samo co wyżej - ew. restart lub powrót
     }
 }
