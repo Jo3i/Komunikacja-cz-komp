@@ -10,7 +10,8 @@
         android:label="OcrApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
         <activity
             android:name=".LanguageActivity"
             android:exported="false" />
@@ -18,12 +19,16 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity android:name=".MainMenuActivity" />
+
+        <activity android:name=".HistoryActivity" />
+
+        <activity android:name=".ScanActivity"/>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -50,4 +50,49 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Kontener na flagi języków -->
+    <LinearLayout
+        android:id="@+id/language_buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/button_polish"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_marginEnd="12dp"
+            android:onClick="onPolishClick">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_flag_pl"
+                android:contentDescription="@string/language_pl" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_english"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:gravity="center"
+            android:onClick="onEnglishClick">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_flag_eng"
+                android:contentDescription="@string/language_en" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
