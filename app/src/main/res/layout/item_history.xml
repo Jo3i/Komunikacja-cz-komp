@@ -6,13 +6,16 @@
     android:padding="12dp"
     android:background="@android:color/white"
     android:layout_marginBottom="8dp"
-    android:elevation="2dp">
+    android:elevation="2dp"
+    android:fitsSystemWindows="true"
+    >
 
     <TextView
         android:id="@+id/textStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Imię ucznia"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 

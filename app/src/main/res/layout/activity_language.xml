@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     android:orientation="vertical"
->
+    android:fitsSystemWindows="true"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,6 +17,8 @@
 
     <!-- Polski -->
     <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/button_polish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,12 +39,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/language_pl"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             android:layout_marginStart="16dp" />
     </LinearLayout>
 
     <!-- Angielski -->
     <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/button_english"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/language_en"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             android:layout_marginStart="16dp" />
     </LinearLayout>

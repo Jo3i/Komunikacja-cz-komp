@@ -1,8 +1,10 @@
 package com.example.ocrapp
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +34,13 @@ class ScanActivity : AppCompatActivity() {
         binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Obsługa kliknięcia przycisku "Scan"
+        binding.captureButton.setOnClickListener {
+            // Przejście do HistoryActivity po kliknięciu przycisku
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
         // Sprawdź pozwolenie na kamerę
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
             == PackageManager.PERMISSION_GRANTED) {
@@ -56,4 +65,8 @@ class ScanActivity : AppCompatActivity() {
             }
         }, ContextCompat.getMainExecutor(this))
     }
+    fun onBackToMenuClick(view: View) {
+        finish() // lub: startActivity(Intent(this, MainMenuActivity::class.java))
+    }
+
 }

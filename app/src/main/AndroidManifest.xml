@@ -18,8 +18,8 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
-        <activity android:name=".MainMenuActivity" />
-
+        <activity android:name=".MainMenuActivity"  android:screenOrientation="portrait" />
+            <!-- testowe ustawienie na pionowy ekran -->
         <activity android:name=".HistoryActivity" />
 
         <activity android:name=".ScanActivity"/>

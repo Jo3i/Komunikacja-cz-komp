@@ -4,9 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:fitsSystemWindows="true"
     android:padding="24dp">
 
     <TextView
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/appname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +19,8 @@
         android:layout_gravity=""/>
 
     <EditText
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +28,8 @@
         android:layout_marginTop="24dp" />
 
     <EditText
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +39,8 @@
 
     <!-- Przycisk jako LinearLayout -->
     <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,8 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textColor="@android:color/white"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -62,13 +71,14 @@
         android:weightSum="2">
 
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_polish"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/rounded_button"
             android:padding="8dp"
             android:gravity="center"
-            android:layout_marginEnd="12dp"
             android:onClick="onPolishClick">
 
             <ImageView
@@ -79,6 +89,8 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_english"
             android:layout_width="48dp"
             android:layout_height="48dp"

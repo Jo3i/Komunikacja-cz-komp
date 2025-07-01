@@ -18,5 +18,6 @@
     <string name="usr_name">User name/email</string>
     <string name="history_marks">Grades history</string>
     <string name="grade_prefix">Grade </string>
+    <string name="back">Back</string>
 
 </resources>

@@ -9,6 +9,8 @@
     tools:context=".MainMenuActivity">
 
     <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,6 +19,8 @@
 
         <!-- Scan button -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_scan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/scan"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -44,6 +49,8 @@
 
         <!-- History button -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/history"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -71,6 +79,8 @@
 
         <!-- Settings button -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/settings"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />

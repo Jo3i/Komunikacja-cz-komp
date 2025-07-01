@@ -3,9 +3,13 @@
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    >
 
     <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -23,6 +27,8 @@
 
         <!-- Zmień motyw -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/change_theme"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -50,6 +57,8 @@
 
         <!-- Zmień język -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/change_language"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
@@ -77,6 +87,8 @@
 
         <!-- Wyloguj -->
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/button_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,6 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/logout"
+                android:textColor="@android:color/black"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
