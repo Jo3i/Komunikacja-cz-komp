@@ -14,12 +14,12 @@ class MainMenuActivity : AppCompatActivity() {
 
     private lateinit var preferences: SharedPreferences
 
-    // Rejestrujemy launcher do startowania LanguageActivity i odbierania rezultatu
+    // pobranie do startowania LanguageActivity i odbierania rezultatu
     private val languageActivityLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            // Jeśli język został zmieniony, to restartujemy aktywność, aby załadować nowy język
+            // Jeśli język został zmieniony to restart aktywności aby załadować nowy język
             recreate()
         }
     }
@@ -44,7 +44,6 @@ class MainMenuActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             config.locale = locale
         }
-
         @Suppress("DEPRECATION")
         resources.updateConfiguration(config, resources.displayMetrics)
     }
@@ -62,11 +61,5 @@ class MainMenuActivity : AppCompatActivity() {
     fun onButtonSettingsClick(view: View) {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
-    }
-
-    // Przykład funkcji wywołanej np. z Settings, by otworzyć LanguageActivity
-    fun onButtonLanguageClick(view: View) {
-        val intent = Intent(this, LanguageActivity::class.java)
-        languageActivityLauncher.launch(intent)
     }
 }

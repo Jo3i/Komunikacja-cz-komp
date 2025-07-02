@@ -32,4 +32,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="@string/back"
+        android:onClick="onBackToMenuClick"
+        app:tint="@color/teal_700"
+        android:elevation="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

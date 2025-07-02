@@ -66,4 +66,7 @@ class SettingsActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    fun onBackToMenuClick(view: View) {
+        finish() // zamyka ustawienia i wraca do poprzedniego ekranu
+    }
 }

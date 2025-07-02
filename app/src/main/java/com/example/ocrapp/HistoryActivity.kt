@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ocrapp.databinding.ActivityHistoryBinding
@@ -24,13 +25,14 @@ class HistoryActivity : AppCompatActivity() {
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val gradePrefix = getString(R.string.grade_prefix)//zmiana nazwy przy zmianie jezyka
+        val gradePrefix = getString(R.string.grade_prefix)//zmiana nazwy oceny przy zmianie jezyka
+        val subjectName = getString(R.string.subjectName)//zmiana nazwy przedmiotu przy zmianie jezyka
 
         // Przykładowe dane
         val historyItems = listOf(
-            HistoryItem("Jan Kowalski", "2025-06-08", "$gradePrefix: 4"),
-            HistoryItem("Anna Nowak", "2025-06-07", "$gradePrefix: 5"),
-            HistoryItem("Krzysztof Wiśniewski", "2025-06-06", "$gradePrefix: 3")
+            HistoryItem("Jan Kowalski", "2025-06-08","$subjectName: j.Polski", "$gradePrefix: 4"),
+            HistoryItem("Anna Nowak", "2025-06-07", "$subjectName: j.Polski","$gradePrefix: 5"),
+            HistoryItem("Krzysztof Wiśniewski", "2025-06-06","$subjectName: j.Polski", "$gradePrefix: 3")
         )
 
         adapter = HistoryAdapter(historyItems)
@@ -52,5 +54,8 @@ class HistoryActivity : AppCompatActivity() {
 
         @Suppress("DEPRECATION")
         resources.updateConfiguration(config, resources.displayMetrics)
+    }
+    fun onBackToMenuClick(view: View) {
+        finish() // lub możesz przejść jawnie do MainMenuActivity, jeśli chcesz
     }
 }

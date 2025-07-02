@@ -1,118 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settingsRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:fitsSystemWindows="true"
-    >
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <!-- Przewijalna zawartość -->
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:fitsSystemWindows="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settings"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Zmień motyw -->
         <LinearLayout
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:id="@+id/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:orientation="vertical"
-            android:background="@drawable/rounded_button"
-            android:padding="16dp"
             android:gravity="center"
-            android:onClick="onChangeThemeClick">
-
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_theme"
-                android:contentDescription="@string/change_theme" />
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/change_theme"
-                android:textColor="@android:color/black"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:text="@string/settings"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="16dp" />
 
-        <!-- Zmień język -->
-        <LinearLayout
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/button_language"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:orientation="vertical"
-            android:background="@drawable/rounded_button"
-            android:padding="16dp"
-            android:gravity="center"
-            android:onClick="onChangeLanguageClick">
-
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_language"
-                android:contentDescription="@string/change_language" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Zmień motyw -->
+            <LinearLayout
+                android:id="@+id/button_theme"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/change_language"
-                android:textColor="@android:color/black"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                android:onClick="onChangeThemeClick">
 
-        <!-- Wyloguj -->
-        <LinearLayout
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/button_logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/rounded_button"
-            android:padding="16dp"
-            android:gravity="center"
-            android:onClick="onLogoutClick">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_theme"
+                    android:contentDescription="@string/change_theme" />
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_logout"
-                android:contentDescription="@string/logout" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_theme"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Zmień język -->
+            <LinearLayout
+                android:id="@+id/button_language"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/logout"
-                android:textColor="@android:color/black"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                android:onClick="onChangeLanguageClick">
 
-    </LinearLayout>
-</ScrollView>
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_language"
+                    android:contentDescription="@string/change_language" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_language"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Wyloguj -->
+            <LinearLayout
+                android:id="@+id/button_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:gravity="center"
+                android:onClick="onLogoutClick">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_logout"
+                    android:contentDescription="@string/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logout"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="@string/back"
+        android:onClick="onBackToMenuClick"
+        android:elevation="8dp"
+        app:tint="@color/teal_700" />
+</FrameLayout>

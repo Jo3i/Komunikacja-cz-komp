@@ -56,4 +56,7 @@ class LanguageActivity : AppCompatActivity() {
         setResult(RESULT_OK)
         finish()
     }
+    fun onBackToMenuClick(view: View) {
+        finish() // zamyka ustawienia i wraca do poprzedniego ekranu
+    }
 }

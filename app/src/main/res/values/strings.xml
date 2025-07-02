@@ -18,4 +18,5 @@
     <string name="history_marks">Historia ocen</string>
     <string name="grade_prefix">Ocena </string>
     <string name="back">Cofnij</string>
+    <string name="subjectName">Przedmiot</string>
 </resources>
