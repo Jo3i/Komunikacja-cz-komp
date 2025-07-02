@@ -19,6 +19,9 @@ class LanguageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_language)
 
         preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+        // Ustawienie języka przy starcie activity, żeby pokazać aktualny język
+        val lang = preferences.getString("language", "en") ?: "en"
+        setLocale(lang)
     }
 
     private fun setLocale(languageCode: String) {
@@ -56,7 +59,8 @@ class LanguageActivity : AppCompatActivity() {
         setResult(RESULT_OK)
         finish()
     }
+
     fun onBackToMenuClick(view: View) {
-        finish() // zamyka ustawienia i wraca do poprzedniego ekranu
+        finish() // zamyka aktywność i wraca do poprzedniej
     }
 }

@@ -9,6 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import java.util.Locale
+import androidx.core.content.edit
 
 class MainMenuActivity : AppCompatActivity() {
 
@@ -62,4 +63,16 @@ class MainMenuActivity : AppCompatActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
+    fun onButtonLogoutClick(view: View) {
+        // wyczyść dane sesji, SharedPreferences itp.
+        val preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+        preferences.edit() { clear() }  // czyszczenie danych użytkownika
+
+        // Wracamy do ekranu logowania
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
 }
