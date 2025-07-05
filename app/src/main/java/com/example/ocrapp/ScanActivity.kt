@@ -66,7 +66,7 @@ class ScanActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
     fun onBackToMenuClick(view: View) {
-        finish() // lub: startActivity(Intent(this, MainMenuActivity::class.java))
+        finish()
     }
 
 }
