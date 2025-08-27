@@ -20,20 +20,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Przycisk "Skanuj" nałożony na podgląd kamery -->
+    <!-- Przycisk "Skanuj" na dole -->
     <Button
         android:id="@+id/captureButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scan"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/teal_700"
         android:textColor="@android:color/white"
-        android:elevation="8dp" />
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/galleryButton"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp" />
 
+    <!-- Przycisk "Galeria" obok przycisku skanu -->
+    <Button
+        android:id="@+id/galleryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gallery"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/captureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp" />
+
+    <!-- Przycisk cofnięcia w prawym dolnym rogu -->
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="40dp"
