@@ -20,5 +20,6 @@
     <string name="grade_prefix">Grade </string>
     <string name="back">Back</string>
     <string name="subjectName">Subject</string>
+    <string name="gallery">Gallery</string>
 
 </resources>

@@ -60,4 +60,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Symja do obliczania matematyki
+    implementation(libs.matheclipse.core)
+    implementation(libs.matheclipse.parser)
 }
