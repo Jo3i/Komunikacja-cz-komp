@@ -16,5 +16,10 @@
     <string name="history">History</string>
     <string name="ic_set">Settings icon</string>
     <string name="usr_name">User name/email</string>
+    <string name="history_marks">Grades history</string>
+    <string name="grade_prefix">Grade </string>
+    <string name="back">Back</string>
+    <string name="subjectName">Subject</string>
+    <string name="gallery">Gallery</string>
 
 </resources>

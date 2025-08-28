@@ -1,68 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/language_layout"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/languageRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:orientation="vertical"
->
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/change_language"
-        android:textSize="24sp"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Polski -->
-    <LinearLayout
-        android:id="@+id/button_polish"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/rounded_button"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:onClick="onPolishClick"
-        android:layout_marginBottom="12dp">
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:fitsSystemWindows="true">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_flag_pl"
-            android:contentDescription="@string/language_pl" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/language_pl"
-            android:textSize="16sp"
-            android:layout_marginStart="16dp" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
 
-    <!-- Angielski -->
-    <LinearLayout
-        android:id="@+id/button_english"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/rounded_button"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:onClick="onEnglishClick">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change_language"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="24dp" />
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_flag_eng"
-            android:contentDescription="@string/language_en" />
+            <!-- Polski -->
+            <LinearLayout
+                android:id="@+id/button_polish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:onClick="onPolishClick">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/language_en"
-            android:textSize="16sp"
-            android:layout_marginStart="16dp" />
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_flag_pl"
+                    android:contentDescription="@string/language_pl" />
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language_pl"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+            <!-- Angielski -->
+            <LinearLayout
+                android:id="@+id/button_english"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:onClick="onEnglishClick">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_flag_eng"
+                    android:contentDescription="@string/language_en" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language_en"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="@string/back"
+        android:onClick="onBackToMenuClick"
+        android:elevation="8dp"
+        android:tint="@color/teal_700" />
+</FrameLayout>

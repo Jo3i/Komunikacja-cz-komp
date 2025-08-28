@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
@@ -13,6 +14,16 @@ class SettingsActivity : AppCompatActivity() {
 
     private lateinit var preferences: SharedPreferences
     private var isDarkMode = false
+
+    // Launcher do uruchamiania LanguageActivity i odbierania wyniku
+    private val languageActivityLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            // Po powrocie z LanguageActivity odświeżamy aktywność, by załadować nowy język
+            recreate()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +50,7 @@ class SettingsActivity : AppCompatActivity() {
     // Metoda wywoływana z android:onClick="onChangeLanguageClick"
     fun onChangeLanguageClick(view: View) {
         val intent = Intent(this, LanguageActivity::class.java)
-        startActivity(intent)
+        languageActivityLauncher.launch(intent)
     }
 
     // Metoda wywoływana z android:onClick="onLogoutClick"
@@ -54,5 +65,8 @@ class SettingsActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
+    }
+    fun onBackToMenuClick(view: View) {
+        finish() // zamyka ustawienia i wraca do poprzedniego ekranu
     }
 }
