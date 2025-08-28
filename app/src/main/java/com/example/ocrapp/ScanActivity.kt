@@ -123,7 +123,7 @@ class ScanActivity : AppCompatActivity() {
         val image = InputImage.fromFilePath(this, uri)
         processImage(image)
     }
-
+    //
     // Główna metoda OCR i wyliczania wyniku
     private fun processImage(image: InputImage) {
         val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) // Klient ML Kit
