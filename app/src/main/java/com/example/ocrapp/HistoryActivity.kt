@@ -1,61 +1,80 @@
 package com.example.ocrapp
 
-import android.content.SharedPreferences
-import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ocrapp.databinding.ActivityHistoryBinding
-import java.util.Locale
+import com.example.ocrapp.databinding.ItemHistoryBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HistoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHistoryBinding
-    private lateinit var adapter: HistoryAdapter
-    private lateinit var preferences: SharedPreferences
+    private val historyList = mutableListOf<HistoryItem>() // Lista HistoryItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
-        val lang = preferences.getString("language", "en") ?: "en"
-        setLocale(lang)
-
         super.onCreate(savedInstanceState)
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val gradePrefix = getString(R.string.grade_prefix)//zmiana nazwy oceny przy zmianie jezyka
-        val subjectName = getString(R.string.subjectName)//zmiana nazwy przedmiotu przy zmianie jezyka
-
-        // Przykładowe dane
-        val historyItems = listOf(
-            HistoryItem("Jan Kowalski", "2025-06-08","$subjectName: j.Polski", "$gradePrefix: 4"),
-            HistoryItem("Anna Nowak", "2025-06-07", "$subjectName: j.Polski","$gradePrefix: 5"),
-            HistoryItem("Krzysztof Wiśniewski", "2025-06-06","$subjectName: j.Polski", "$gradePrefix: 3")
+        // Dodaj przykładowe dane
+        historyList.add(
+            HistoryItem(
+                studentName = "Jan Kowalski",
+                date = "2025-09-02 10:00:00",
+                subject = "Matematyka",
+                result = "5"
+            )
+        )
+        historyList.add(
+            HistoryItem(
+                studentName = "Anna Nowak",
+                date = "2025-09-01 15:30:00",
+                subject = "Język polski",
+                result = "Poprawnie"
+            )
         )
 
-        adapter = HistoryAdapter(historyItems)
-        binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.historyRecyclerView.adapter = adapter
-    }
-
-    private fun setLocale(languageCode: String) {
-        val locale = Locale(languageCode)
-        Locale.setDefault(locale)
-
-        val config = Configuration(resources.configuration)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            config.setLocale(locale)
-        } else {
-            @Suppress("DEPRECATION")
-            config.locale = locale
+        // Odbierz nowy wynik z ScanActivity
+        intent.getSerializableExtra("historyItem")?.let { item ->
+            if (item is HistoryItem) {
+                historyList.add(0, item) // dodajemy nowy wynik na początek
+            }
         }
 
-        @Suppress("DEPRECATION")
-        resources.updateConfiguration(config, resources.displayMetrics)
+        // RecyclerView
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = HistoryAdapter(historyList)
     }
-    fun onBackToMenuClick(view: View) {
-        finish() // lub możesz przejść jawnie do MainMenuActivity, jeśli chcesz
+
+    // Adapter RecyclerView dla HistoryItem
+    class HistoryAdapter(private val items: List<HistoryItem>) :
+        RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+
+        inner class HistoryViewHolder(val binding: ItemHistoryBinding) :
+            RecyclerView.ViewHolder(binding.root)
+
+        override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): HistoryViewHolder {
+            val binding = ItemHistoryBinding.inflate(
+                android.view.LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            return HistoryViewHolder(binding)
+        }
+
+        override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
+            val item = items[position]
+            holder.binding.apply {
+                textStudentName.text = item.studentName
+                textDate.text = item.date
+                textSubject.text = item.subject
+                textResult.text = item.result
+            }
+        }
+
+        override fun getItemCount(): Int = items.size
     }
 }
