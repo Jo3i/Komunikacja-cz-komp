@@ -50,7 +50,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     fun onButtonScanClick(view: View) {
-        val intent = Intent(this, ScanActivity::class.java)
+        val intent = Intent(this, PhotoSourceActivity::class.java)
         startActivity(intent)
     }
 
