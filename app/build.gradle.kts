@@ -64,4 +64,12 @@ dependencies {
     // Symja do obliczania matematyki
     implementation(libs.matheclipse.core)
     implementation(libs.matheclipse.parser)
+
+    // Łączenie po API do puter.js
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+    implementation(libs.gson)
+
 }
